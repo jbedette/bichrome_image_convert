@@ -1,1 +1,4 @@
 processed_images/
+images/
+*.png
+*.jpg

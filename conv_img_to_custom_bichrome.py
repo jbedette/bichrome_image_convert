@@ -111,6 +111,8 @@ def main():
 
     # Default colors
     default_black_color = (0, 0, 0)  # Black remains unchanged by default
+    # default_white_color = (255, 255, 255)  # White replaced with #f3efdd by default
+    # default_beige_color = (243, 239, 221)  # White replaced with #f3efdd by default
     default_white_color = (243, 239, 221)  # White replaced with #f3efdd by default
 
     # Pick colors for black and white replacement
