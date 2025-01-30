@@ -101,7 +101,6 @@ def pick_color_or_default(prompt, default_color):
                 except ValueError:
                     print("Invalid input. Please enter integers between 0 and 255.")
     else:
-        # Use default color
         return default_color
 
 def main():
@@ -110,10 +109,8 @@ def main():
     root.withdraw()
 
     # Default colors
-    default_black_color = (0, 0, 0)  # Black remains unchanged by default
-    # default_white_color = (255, 255, 255)  # White replaced with #f3efdd by default
-    # default_beige_color = (243, 239, 221)  # White replaced with #f3efdd by default
-    default_white_color = (243, 239, 221)  # White replaced with #f3efdd by default
+    default_black_color = (0, 0, 0)  # Black
+    default_white_color = (243, 239, 221)  # Beige (f3efdd)
 
     # Pick colors for black and white replacement
     print("Select color for black:")
@@ -121,6 +118,12 @@ def main():
 
     print("Select color for white:")
     white_color = pick_color_or_default("white", default_white_color)
+
+    # Ask user if they want to flip black and white colors
+    flip_colors = input("Do you want to flip the black and white replacement colors? (yes or no): ").strip().lower() == "yes"
+    if flip_colors:
+        black_color, white_color = white_color, black_color
+        print(f"Colors flipped: Black → {black_color}, White → {white_color}")
 
     # Cleanup options
     cleanup = input("Do you want to clean up the images (compress and remove metadata)? (yes or no): ").strip().lower() == "yes"
